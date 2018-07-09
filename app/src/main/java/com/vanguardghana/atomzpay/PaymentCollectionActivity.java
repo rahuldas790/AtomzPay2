@@ -214,7 +214,11 @@ public class PaymentCollectionActivity extends AppCompatActivity {
         typeOfGoodsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                displayNormalAmt2PayTextView.setText(amounts.get(position));
+                try {
+                    displayNormalAmt2PayTextView.setText(amounts.get(position));
+                } catch (Exception e) {
+
+                }
 
             } // to close the onItemSelected
 
