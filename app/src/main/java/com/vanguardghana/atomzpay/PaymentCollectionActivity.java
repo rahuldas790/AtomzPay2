@@ -1024,7 +1024,8 @@ public class PaymentCollectionActivity extends AppCompatActivity {
 
             Ion.with(this)
                     .load("GET", url)
-                    .setHeader("Authorization", "Bearer lGHojLP0JFnc2KVstcvPdi7fb4hmgzpwPUZ0ZRrjZJjGdtVmr5k8uJLz1dg1")
+//                    .setHeader("Authorization", "Bearer lGHojLP0JFnc2KVstcvPdi7fb4hmgzpwPUZ0ZRrjZJjGdtVmr5k8uJLz1dg1")
+                    .setHeader("Authorization", "Bearer " + accessToken)
                     .asString()
                     .withResponse()
                     .setCallback(new FutureCallback<Response<String>>() {
