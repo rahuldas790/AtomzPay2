@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">AtomzPay</string>
+    <string name="server_address">http://35.226.107.45/webs/api/collector</string>
     
     <!-- Print -->
     <string name="print_test">Print Test</string>

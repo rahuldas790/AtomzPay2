@@ -4,11 +4,8 @@ import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorResponse;
 import android.accounts.NetworkErrorException;
-import android.app.Service;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.IBinder;
 
 public class Authenticator extends AbstractAccountAuthenticator {
     public Authenticator(Context context) {

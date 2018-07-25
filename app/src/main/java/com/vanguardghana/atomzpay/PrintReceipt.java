@@ -67,38 +67,6 @@ public class PrintReceipt extends Activity{
 
 
 
-
-//    @Override
-//    public void run() {
-//        new Thread(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                try {
-//                    mUsbThermalPrinter.start(0);
-//                    mUsbThermalPrinter.reset();
-//                    printVersion = mUsbThermalPrinter.getVersion();
-//                } catch (TelpoException e) {
-//                    e.printStackTrace();
-//                } finally {
-//                    if (printVersion != null) {
-//                        Message message = new Message();
-//                        message.what = PRINTVERSION;
-//                        message.obj = "1";
-//                        mHandler.sendMessage(message);
-//                    } else {
-//                        Message message = new Message();
-//                        message.what = PRINTVERSION;
-//                        message.obj = "0";
-//                        mHandler.sendMessage(message);
-//                    }
-//                }
-//            }
-//        }).start();
-//    }
-
-
-
     public void checkAndPrint(String receiptInfo){
         printContent = receiptInfo;
         leftDistance = 1;
@@ -236,6 +204,7 @@ public class PrintReceipt extends Activity{
             super.run();
             try {
                 mUsbThermalPrinter.reset();
+
                 mUsbThermalPrinter.setAlgin(UsbThermalPrinter.ALGIN_LEFT);
                 mUsbThermalPrinter.setLeftIndent(leftDistance);
                 mUsbThermalPrinter.setLineSpace(lineDistance);
@@ -259,7 +228,6 @@ public class PrintReceipt extends Activity{
                 if (nopaper){
                     mHandler.sendMessage(mHandler.obtainMessage(NOPAPER, 1, 0, null));
                     nopaper = false;
-                    return;
                 }
             }
         }
